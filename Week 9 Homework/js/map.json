@@ -1,36 +1,36 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 1000,
-    "height": 1000,
-    "title": "Test",
-    "data": {
-    "url": "https://raw.githubusercontent.com/3arhead/3179-visualization/main/Week%209%20Homework/js/malaysia.json",
-    "format": {"type": "topojson", "feature":"malaysia"}
-    },
-    "transform": [{
-        "lookup": "properties.name",
-        "from": {
-          "data": {
-            "url": "https://raw.githubusercontent.com/3arhead/3179-visualization/main/Week%209%20Homework/data/population.csv"
-          },
-          "key": "state",
-          "fields": ["pop_60"]
-        }
-      },
-      {"calculate": "datum.pop_60", "as": "Number of Seniors"}
-    ],
-    "projection": {"type": "equalEarth"},
-    "mark": {"type": "geoshape"},
-    "encoding": {
-        "color": {
-          "field": "Number of Seniors",
-          "type": "quantitative",
-          "scale": {"type": "log"}
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 1000,
+  "height": 1000,
+  "title": "Test",
+  "data": {
+  "url": "https://raw.githubusercontent.com/3arhead/3179-visualization/main/Week%209%20Homework/js/malaysia.json",
+  "format": {"type": "topojson", "feature":"malaysia"}
+  },
+  "transform": [{
+      "lookup": "properties.name",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/3arhead/3179-visualization/main/Week%209%20Homework/data/population.csv"
         },
-        "tooltip": [
-          {"field": "properties.NAME", "type": "nominal", "title": "State"},
-          {"field": "pop_60", "type": "quantitative"}
-        ]
-    }
+        "key": "state",
+        "fields": ["pop_60"]
+      }
+    },
+    {"calculate": "datum.pop_60", "as": "Number of Seniors"}
+  ],
+  "projection": {"type": "equirectangular"},
+  "mark": {"type": "geoshape"},
+  "encoding": {
+      "color": {
+        "field": "Number of Seniors",
+        "type": "quantitative",
+        "scale": {"type": "linear"}
+      },
+      "tooltip": [
+        {"field": "properties.name", "type": "nominal", "title": "State"},
+        {"field": "pop_60", "type": "quantitative"}
+      ]
+  }
 }
    
