@@ -1,0 +1,46 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": { "text": "Malaysia's Population" },
+    "data": {
+    "url": "https://raw.githubusercontent.com/3arhead/3179-visualization/main/data/population.csv"
+    },
+    "transform": [
+        {"calculate": "datum.pop","as": "All"},
+        {"calculate": "datum.pop_60","as": "60+"},
+        {"calculate": "datum.pop_18","as": "18+"},
+        {"fold": ["All", "60+", "18+"], "as": ["age_range", "population"]},
+        {"filter": {"selection": "pop_range"}}
+        ],
+    "selection": {
+        "pop_range": {
+        "type": "single",
+        "init": {"age_range": "All"},
+        "bind": {
+            "age_range": {
+            "name": "Age Range:",
+            "input": "select",
+            "options": [
+                "All",
+                "18+",
+                "60+"
+            ]
+            }
+        }
+        }
+    },
+    "mark": "bar",
+    "encoding": {
+      "x": { "field": "state", "type": "nominal" },
+      "y": { "field": "population", "type": "quantitative"},
+      "row": {
+      "field": "age_range",
+      "type": "nominal",
+      "title": null
+       },
+       "tooltip": [
+        {"field": "state", "type": "nominal", "title": "State"},
+        {"field": "age_range", "type": "nominal", "title": "Age Range"},
+        {"field": "population", "type": "quantitative", "title": "Population"}
+      ]
+    }
+}
