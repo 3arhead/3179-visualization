@@ -22,6 +22,7 @@
   "encoding": {
       "color": {
         "field": "Number of Seniors per 10000 people",
+        "title": "Seniors",
         "type": "quantitative",
         "scale": {
           "type": "threshold",
