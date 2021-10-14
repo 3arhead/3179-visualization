@@ -1,6 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": { "text": "Malaysia's Population" },
+    "width": 1000,
+    "height": 600,
+    "title": { "text": "Malaysia's Population (Based on age range)" },
     "data": {
     "url": "https://raw.githubusercontent.com/3arhead/3179-visualization/main/data/population.csv"
     },
@@ -30,6 +32,11 @@
     },
     "mark": "bar",
     "encoding": {
+        "color": {
+            "field": "age_range",
+            "type": "nominal",
+            "scale": {"range":["red","green","blue"], "domain":["All","18+","60+"]}
+        },
       "x": { "field": "state", "type": "nominal" },
       "y": { "field": "population", "type": "quantitative"},
       "row": {

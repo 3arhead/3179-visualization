@@ -33,8 +33,9 @@
       },
       "tooltip": [
         {"field": "properties.name", "type": "nominal", "title": "State"},
-        {"field": "pop_60", "type": "quantitative"},
+        {"field": "pop_60", "title": "Senior Citizens", "type": "quantitative"},
         {"field": "Number of Seniors per 10000 people", "type": "quantitative", "format": ".2f"}
       ]
   }
 }
+   
