@@ -1,5 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 400,
   "title": "Number of Senior Citizens in each State of Malaysia",
   "data": {
   "url": "https://raw.githubusercontent.com/3arhead/3179-visualization/main/js/malaysia.json",
