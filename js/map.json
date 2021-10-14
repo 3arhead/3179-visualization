@@ -14,23 +14,27 @@
           "url": "https://raw.githubusercontent.com/3arhead/3179-visualization/main/data/population.csv"
         },
         "key": "state",
-        "fields": ["pop_60"]
+        "fields": ["pop_60", "pop"]
       }
     },
-    {"calculate": "datum.pop_60", "as": "Number of Seniors"}
+    {"calculate": "datum.pop_60/datum.pop * 1000", "as": "Number of Seniors per 10000 people"}
   ],
   "projection": {"type": "equirectangular"},
   "mark": {"type": "geoshape"},
   "encoding": {
       "color": {
-        "field": "Number of Seniors",
+        "field": "Number of Seniors per 10000 people",
         "type": "quantitative",
-        "scale": {"type": "linear"}
+        "scale": {
+          "type": "threshold",
+          "domain": [75, 110, 125, 150],
+          "range": ["#fcb095","#fd8c6c","#f65840","#d62623","#a00d15"]
+        }
       },
       "tooltip": [
         {"field": "properties.name", "type": "nominal", "title": "State"},
-        {"field": "pop_60", "type": "quantitative"}
+        {"field": "pop_60", "type": "quantitative"},
+        {"field": "Number of Seniors per 10000 people", "type": "quantitative", "format": ".2f"}
       ]
   }
 }
-   
