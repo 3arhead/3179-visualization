@@ -1,0 +1,18 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 500,
+    "description": "Google's stock price over time.",
+    "data": {
+      "url": "https://raw.githubusercontent.com/3arhead/3179-visualization/main/data/populationYear.csv"
+    },
+    "mark": {
+      "type":"line",
+      "point": true
+    },
+    "encoding": {
+      "x": {"field": "date", "timeUnit": "year","axis": {"grid": false}},
+      "y": {"field": "pop", "type": "quantitative","axis": {"grid": false},"scale": {"domain": [27000000, 33000000]}}
+    }
+  }
+  
