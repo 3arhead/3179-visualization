@@ -11,6 +11,6 @@
       {"field": "pop_group", "type": "nominal", "title": "Age Group"},
       {"field": "percentage_pop", "type": "quantitative","title": "Percentage of Population (%)"}],
       "theta": {"field": "pop_total", "type": "quantitative","title": "Total Population"},
-      "color": {"field": "pop_group", "type": "nominal", "title": "Age Group"}
+      "color": {"field": "pop_group", "type": "nominal", "title": "Age Group", "scale": {"range": ["red","purple","pink"]}}
     }
-  }
+}
