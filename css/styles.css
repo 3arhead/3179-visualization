@@ -30,6 +30,11 @@ body {
     width: 100%;
 }
 
+.vis-container-map {
+    width: 100%;
+    margin: 0 auto;
+}
+
 .title h1,p {
     margin-top: 0px;
 }
