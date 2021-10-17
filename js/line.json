@@ -6,10 +6,9 @@
     "data": {
       "url": "https://raw.githubusercontent.com/3arhead/3179-visualization/main/data/populationYear.csv"
     },
-    "mark": {
-      "type":"line",
-      "point": true
-    },
+    "transform": [
+      {"calculate": "datum.date", "as": "Year"}
+    ],
     "encoding": {
       "x": {"field": "date", "timeUnit": "year","axis": {"grid": false},"scale": {"domain": [2009, 2021]}},
       "y": {"field": "pop", "type": "quantitative","axis": {"grid": false},"scale": {"domain": [27000000, 33000000]}}
@@ -18,6 +17,12 @@
       "mark": {
       "type":"line",
       "point": true
+      },
+      "encoding": {
+        "tooltip": [
+          {"field": "Year", "type": "temporal", "title": "Date"},
+          {"field": "pop", "title": "Population", "type": "quantitative"}
+        ]
       }
       },{
       "mark": {
@@ -56,8 +61,7 @@
           },
           "value": 0
         }
-        }
-          
+      }   
     }]
   }
   
