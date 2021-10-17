@@ -30,7 +30,8 @@
         "type": "text",
         "align": "center",
         "yOffset": 15,
-        "aria": false
+        "aria": false,
+        "fontSize": 15
       },
       "encoding": {
         "text": {"field": "pop", "type": "quantitative"},
@@ -50,7 +51,8 @@
         "type": "text",
         "align": "center",
         "yOffset": -15,
-        "aria": false
+        "aria": false,
+        "fontSize": 15
       },
       "encoding": {
         "text": {"field": "pop", "type": "quantitative"},
