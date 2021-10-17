@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 500,
     "height": 500,
-    "description": "Malaysia's Population from the year 2010-2020",
+    "description": "Google's stock price over time.",
     "data": {
       "url": "https://raw.githubusercontent.com/3arhead/3179-visualization/main/data/populationYear.csv"
     },
@@ -11,8 +11,54 @@
       "point": true
     },
     "encoding": {
-      "x": {"field": "date", "timeUnit": "year","axis": {"grid": false}},
+      "x": {"field": "date", "timeUnit": "year","axis": {"grid": false},"scale": {"domain": [2009, 2021]}},
       "y": {"field": "pop", "type": "quantitative","axis": {"grid": false},"scale": {"domain": [27000000, 33000000]}}
-    }
+    },
+    "layer": [{
+      "mark": {
+      "type":"line",
+      "point": true
+      }
+      },{
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "yOffset": 15,
+        "aria": false
+      },
+      "encoding": {
+        "text": {"field": "pop", "type": "quantitative"},
+        "color": {"value":"black"},
+        "opacity": {
+            "condition": {
+            "test": {"field":"pop", "range": [28208035,28208036]},
+            "value": 1
+          },
+          "value": 0
+        }
+        }
+          
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "yOffset": -15,
+        "aria": false
+      },
+      "encoding": {
+        "text": {"field": "pop", "type": "quantitative"},
+        "color": {"value":"black"},
+        "opacity": {
+            "condition": {
+            "test": {"field":"pop", "range": [32365998,32365999]},
+            "value": 1
+          },
+          "value": 0
+        }
+        }
+          
+    }]
   }
+  
   
