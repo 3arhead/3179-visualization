@@ -1,7 +1,5 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 500,
-    "height": 500,
     "description": "Google's stock price over time.",
     "data": {
       "url": "https://raw.githubusercontent.com/3arhead/3179-visualization/main/data/populationYear.csv"
