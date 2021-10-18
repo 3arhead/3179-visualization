@@ -33,6 +33,7 @@ body {
 .vis-container-map {
     width: 100%;
     margin: 0 auto;
+    padding-left: 97px;
 }
 
 .title h1,p {
