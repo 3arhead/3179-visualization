@@ -1,13 +1,15 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 450,
+    "height": 300,
     "title": { "text": "Malaysia's Population (Based on age range)"},
     "data": {
     "url": "https://raw.githubusercontent.com/3arhead/3179-visualization/main/data/population.csv"
     },
     "transform": [
-        {"calculate": "datum.pop_below_18","as": "Below 18"},
-        {"calculate": "datum.pop_60","as": "60+"},
-        {"calculate": "datum.pop_18","as": "18+"},
+        {"calculate": "datum.pop_percentage_below_18","as": "Below 18"},
+        {"calculate": "datum.pop_percentage_60","as": "60+"},
+        {"calculate": "datum.pop_percentage_18","as": "18+"},
         {"fold": ["Below 18", "60+", "18+"], "as": ["age_range", "population"]},
         {"filter": {"selection": "pop_range"}}
         ],
@@ -33,6 +35,7 @@
         "color": {
             "field": "age_range",
             "type": "nominal",
+            "title": "Age Group",
             "scale": {"range":["red","green","blue"], "domain":["Below 18","18+","60+"]}
         },
       "x": { "field": "state", "type": "nominal", "sort":"y" },
@@ -45,7 +48,7 @@
        "tooltip": [
         {"field": "state", "type": "nominal", "title": "State"},
         {"field": "age_range", "type": "nominal", "title": "Age Range"},
-        {"field": "population", "type": "quantitative", "title": "Population"}
+        {"field": "population", "type": "quantitative", "title": "Percentage of Population (%)"}
       ]
     }
 }
