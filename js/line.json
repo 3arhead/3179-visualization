@@ -21,7 +21,7 @@
           {"field": "Year", "type": "temporal", "title": "Date"},
           {"field": "pop", "title": "Population", "type": "quantitative"}
         ],
-        "color": {"value":"red"}
+        "color": {"value":"#FFAA33"}
       }
       },{
       "mark": {

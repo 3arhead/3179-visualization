@@ -5,10 +5,10 @@
     "url": "https://raw.githubusercontent.com/3arhead/3179-visualization/main/data/population.csv"
     },
     "transform": [
-        {"calculate": "datum.pop","as": "All"},
+        {"calculate": "datum.pop - datum.pop_60 - datum.pop_18","as": "Below 18"},
         {"calculate": "datum.pop_60","as": "60+"},
         {"calculate": "datum.pop_18","as": "18+"},
-        {"fold": ["All", "60+", "18+"], "as": ["age_range", "population"]},
+        {"fold": ["Below 18", "18+", "60+"], "as": ["age_range", "population"]},
         {"filter": {"selection": "pop_range"}}
         ],
     "selection": {
