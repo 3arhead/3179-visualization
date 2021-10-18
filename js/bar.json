@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 450,
-    "height": 300,
+    "width": 438,
+    "height": 310,
     "title": { "text": "Malaysia's Population (Based on age range)"},
     "data": {
     "url": "https://raw.githubusercontent.com/3arhead/3179-visualization/main/data/population.csv"
