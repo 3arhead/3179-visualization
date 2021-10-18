@@ -20,7 +20,7 @@
             "name": "Age Range:",
             "input": "select",
             "options": [
-                "All",
+                "Below 18",
                 "18+",
                 "60+"
             ]
@@ -33,7 +33,7 @@
         "color": {
             "field": "age_range",
             "type": "nominal",
-            "scale": {"range":["red","green","blue"], "domain":["All","18+","60+"]}
+            "scale": {"range":["red","green","blue"], "domain":["Below 18","18+","60+"]}
         },
       "x": { "field": "state", "type": "nominal", "sort":"y" },
       "y": { "field": "population", "type": "quantitative"},
