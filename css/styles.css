@@ -4,15 +4,17 @@
 
 p {
     font-family: 'Roboto', sans-serif;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 h1 {
     font-family: 'Roboto', sans-serif;
+    font-size: 35px;
 }
 
 h2 {
     font-family: 'Roboto', sans-serif;
+    font-size: 28px;
 }
 
 body {
@@ -34,7 +36,7 @@ body {
 .vis-container-map {
     width: 100%;
     margin-bottom: 15px;
-    padding-left: 46px;
+    padding-left: 71px;
 }
 
 .title h1,p {
