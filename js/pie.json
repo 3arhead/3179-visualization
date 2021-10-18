@@ -14,6 +14,6 @@
     {"field": "pop_group", "type": "nominal", "title": "Age Group"},
     {"field": "percentage_pop", "type": "quantitative","title": "Percentage of Population (%)"}],
     "theta": {"field": "pop_total", "type": "quantitative","title": "Total Population"},
-    "color": {"field": "pop_group", "type": "nominal", "legend": {"labelFontSize": 15, "titleFontSize":16}, "title": "Age Group", "scale": {"range": ["#cfca53","#d94848","#634711"]}}
+    "color": {"field": "pop_group", "type": "nominal", "legend": {"labelFontSize": 15, "titleFontSize":16}, "title": "Age Group", "scale": {"range": ["#d94848","#634711","#cfca53"]}}
   }
 }
