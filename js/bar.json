@@ -40,7 +40,7 @@
             "scale": {"range":["#cfca53","#d94848","#634711"], "domain":["Below 18","18+","60+"]}
         },
       "x": { "field": "state", "type": "nominal", "sort":"y" },
-      "y": { "field": "population", "type": "quantitative"},
+      "y": { "field": "population", "type": "quantitative", "title": "Percentage of Population (%)"},
       "row": {
       "field": "age_range",
       "type": "nominal",
