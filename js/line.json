@@ -1,71 +1,70 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 500,
-    "height": 500,
-    "description": "Google's stock price over time.",
-    "data": {
-      "url": "https://raw.githubusercontent.com/3arhead/3179-visualization/main/data/populationYear.csv"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 500,
+  "title": "Malaysia's change in population over the years 2010 - 2020",
+  "data": {
+    "url": "https://raw.githubusercontent.com/3arhead/3179-visualization/main/data/populationYear.csv"
+  },
+  "transform": [
+    {"calculate": "datum.date", "as": "Year"}
+  ],
+  "encoding": {
+    "x": {"field": "date", "timeUnit": "year","axis": {"grid": false},"scale": {"domain": [2009, 2021]}},
+    "y": {"field": "pop", "type": "quantitative","axis": {"grid": false},"scale": {"domain": [27000000, 33000000]}}
+  },
+  "layer": [{
+    "mark": {
+    "type":"line",
+    "point": true
     },
-    "transform": [
-      {"calculate": "datum.date", "as": "Year"}
-    ],
     "encoding": {
-      "x": {"field": "date", "timeUnit": "year","axis": {"grid": false},"scale": {"domain": [2009, 2021]}},
-      "y": {"field": "pop", "type": "quantitative","axis": {"grid": false},"scale": {"domain": [27000000, 33000000]}}
+      "tooltip": [
+        {"field": "Year", "type": "temporal", "title": "Date"},
+        {"field": "pop", "title": "Population", "type": "quantitative"}
+      ],
+      "color": {"value":"#FFAA33"}
+    }
+    },{
+    "mark": {
+      "type": "text",
+      "align": "center",
+      "yOffset": 15,
+      "aria": false,
+      "fontSize": 15
     },
-    "layer": [{
-      "mark": {
-      "type":"line",
-      "point": true
-      },
-      "encoding": {
-        "tooltip": [
-          {"field": "Year", "type": "temporal", "title": "Date"},
-          {"field": "pop", "title": "Population", "type": "quantitative"}
-        ],
-        "color": {"value":"#FFAA33"}
+    "encoding": {
+      "text": {"field": "pop", "type": "quantitative"},
+      "color": {"value":"black"},
+      "opacity": {
+          "condition": {
+          "test": {"field":"pop", "range": [28208035,28208036]},
+          "value": 1
+        },
+        "value": 0
       }
-      },{
-      "mark": {
-        "type": "text",
-        "align": "center",
-        "yOffset": 15,
-        "aria": false,
-        "fontSize": 15
-      },
-      "encoding": {
-        "text": {"field": "pop", "type": "quantitative"},
-        "color": {"value":"black"},
-        "opacity": {
-            "condition": {
-            "test": {"field":"pop", "range": [28208035,28208036]},
-            "value": 1
-          },
-          "value": 0
-        }
-        }
-          
+      }
+        
+  },
+  {
+    "mark": {
+      "type": "text",
+      "align": "center",
+      "yOffset": -15,
+      "aria": false,
+      "fontSize": 15
     },
-    {
-      "mark": {
-        "type": "text",
-        "align": "center",
-        "yOffset": -15,
-        "aria": false,
-        "fontSize": 15
-      },
-      "encoding": {
-        "text": {"field": "pop", "type": "quantitative"},
-        "color": {"value":"black"},
-        "opacity": {
-            "condition": {
-            "test": {"field":"pop", "range": [32365998,32365999]},
-            "value": 1
-          },
-          "value": 0
-        }
-      }   
-    }]
-  }
-  
-  
+    "encoding": {
+      "text": {"field": "pop", "type": "quantitative"},
+      "color": {"value":"black"},
+      "opacity": {
+          "condition": {
+          "test": {"field":"pop", "range": [32365998,32365999]},
+          "value": 1
+        },
+        "value": 0
+      }
+    }   
+  }]
+}
+

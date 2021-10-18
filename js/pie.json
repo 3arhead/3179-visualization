@@ -1,18 +1,18 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 420,
-    "height": 420,
-    "description": "Pie chart of the population of each age range in Malaysia (2020)",
-    "data": {
-      "url": "https://raw.githubusercontent.com/3arhead/3179-visualization/main/data/populationPie.csv"
-    },
-    "mark": {"type":"arc","tooltip":true},
-    "encoding": {
-      "tooltip": [
-      {"field": "pop_total", "type": "quantitative","title": "Total Population"},
-      {"field": "pop_group", "type": "nominal", "title": "Age Group"},
-      {"field": "percentage_pop", "type": "quantitative","title": "Percentage of Population (%)"}],
-      "theta": {"field": "pop_total", "type": "quantitative","title": "Total Population"},
-      "color": {"field": "pop_group", "type": "nominal", "title": "Age Group", "scale": {"range": ["red","purple","pink"]}}
-    }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 470,
+  "height": 470,
+  "description": "Pie chart of the population of each age range in Malaysia (2020)",
+  "data": {
+    "url": "https://raw.githubusercontent.com/3arhead/3179-visualization/main/data/populationPie.csv"
+  },
+  "mark": {"type":"arc","tooltip":true},
+  "encoding": {
+    "tooltip": [
+    {"field": "pop_total", "type": "quantitative","title": "Total Population"},
+    {"field": "pop_group", "type": "nominal", "title": "Age Group"},
+    {"field": "percentage_pop", "type": "quantitative","title": "Percentage of Population (%)"}],
+    "theta": {"field": "pop_total", "type": "quantitative","title": "Total Population"},
+    "color": {"field": "pop_group", "type": "nominal", "legend": {"labelFontSize": 15, "titleFontSize":16}, "title": "Age Group", "scale": {"range": ["red","purple","pink"]}}
+  }
 }

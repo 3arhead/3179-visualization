@@ -36,6 +36,7 @@
             "field": "age_range",
             "type": "nominal",
             "title": "Age Group",
+            "legend": {"labelFontSize": 14, "titleFontSize":15},
             "scale": {"range":["red","green","blue"], "domain":["Below 18","18+","60+"]}
         },
       "x": { "field": "state", "type": "nominal", "sort":"y" },

@@ -24,6 +24,7 @@
         "field": "normalized_pop",
         "title": "Citizens per 1000 people",
         "type": "quantitative",
+        "legend": {"labelFontSize": 15, "titleFontSize":15},
         "scale": {
           "type": "threshold",
           "domain": [10, 40, 75, 90, 199],
