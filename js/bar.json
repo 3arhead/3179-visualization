@@ -14,7 +14,7 @@
     "selection": {
         "pop_range": {
         "type": "single",
-        "init": {"age_range": "Below 18"},
+        "init": {"age_range": "18+"},
         "bind": {
             "age_range": {
             "name": "Age Range:",
